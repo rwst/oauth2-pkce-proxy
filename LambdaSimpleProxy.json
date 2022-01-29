@@ -1,0 +1,31 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "LambdaSimpleProxy",
+    "description" : "test",
+    "version" : "2022-01-19T17:49:18Z"
+  },
+  "servers" : [ {
+    "url" : "https://domain.amazonaws.com/{basePath}",
+    "variables" : {
+      "basePath" : {
+        "default" : "/beta"
+      }
+    }
+  } ],
+  "paths" : {
+    "/{proxy+}" : {
+      "x-amazon-apigateway-any-method" : {
+        "parameters" : [ {
+          "name" : "proxy",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ]
+      }
+    }
+  },
+  "components" : { }
+}
